@@ -12,4 +12,16 @@ $(document).ready(function() {
     firebase.initializeApp(config); 
 
     const database = firebase.database(); 
+
+    // Adding rows to train table
+    $("#submit").on("click", function(event) { 
+        event.preventDefault(); 
+
+        const trainName = $("train-name").val().trim(); 
+        const trainDestination = $("#train-destination").val().trim();
+        const firstTrain = moment($("#train-time").val().trim(), "HH:mm").format("X");
+        const trainFrequency = $("#train-frequency").val().trim();
+
+
+    })
 })
