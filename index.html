@@ -10,9 +10,80 @@
     <link rel="stylesheet" href="Assets/CSS/style.css"> 
 </head>
 <body>
+
+    <div class="container"> 
+        <header>
+            <div class="jumbotron text-center"> 
+                <h2> Train Scheduler</h2>
+                <h4> Schedule your train rides here.</h4>
+            </div>
+        </header>
+
+        <div class="card train-table">
+            <h5 class="text-center card-header"> Train Schedule </h5>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+
+        <div class="train-form"> 
+            <div class="card"> 
+                <h5 class="card-header">Train Form</h5>
+                <form class="container">
+                    <div class="form-row">
+                        <!-- Train Name, Destination, First Time Train(military time), frequency -->
+                        <input type="text" class="form-control" placeholder="Train Name">
+                    </div>
+                    <div class="form-row">
+                        <!-- Train Name, Destination, First Time Train(military time), frequency -->
+                        <input type="text" class="form-control" placeholder="Destination">
+                    </div>
+                    <div class="form-row">
+                            <!-- Train Name, Destination, First Time Train(military time), frequency -->
+                        <input type="text" class="form-control" placeholder="First Time Train (HH:MM - Military Time)">
+                    </div>
+                    <div class="form-row">
+                            <!-- Train Name, Destination, First Time Train(military time), frequency -->
+                        <input type="text" class="form-control" placeholder="Frequency (Min)">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign in</button>   
+                </form> 
+            </div>
+        </div>
+
+    </div>    
+
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="Assets/JS/logic.js"></script>
 </body>
 </html>
+
