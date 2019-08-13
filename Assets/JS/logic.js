@@ -56,7 +56,27 @@ $(document).ready(function() {
         const freq = input.val().name;
         console.log(freq);
 
-        
+        // Calculating train times 
+        const addedTrainTime = moment.unix(first).format("HH:mm"); 
+        console.log(addedTrainTime); 
+
+        const trainYear = moment(first, "HH:mm").subtract(1, "years");
+        console.log(trainYear);
+
+        const now = moment(); 
+        console.log(moment(now).format("HH:mm")); 
+
+        const differentTime= moment().diff(moment(trainYear), "minutes"); 
+        console.log(differentTime); 
+
+        const timeRemaining = differentTime % freq;
+        console.log(timeRemaining); 
+
+        const nextTrain = freq - timeRemaining; 
+        console.log(nextTrain); 
+
+
+
 
 
     }
