@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <link rel="stylesheet" href="Assets/CSS/style.css"> 
 </head>
@@ -14,6 +15,7 @@
     <div class="container"> 
         <header>
             <div class="jumbotron text-center"> 
+                <i class="fas fa-train"></i>
                 <h2> Train Scheduler</h2>
                 <h4> Schedule your train rides here.</h4>
             </div>
@@ -22,7 +24,7 @@
         <div class="card train-table">
             <h5 class="text-center card-header"> Train Schedule </h5>
             <table class="table">
-                <thead class="thead-dark">
+                <thead class="thead">
                     <tr class="text-center">
                         <th scope="col"></th>
                         <th scope="col">Train Name</th>
@@ -64,22 +66,22 @@
 
         <div class="train-form"> 
             <div class="card"> 
-                <h5 class="card-header">Train Form</h5>
+                <h5 class="card-header text-center">Train Form</h5>
                 <form class="container">
                     <div class="form-row">
-                        <!-- Train Name, Destination, First Time Train(military time), frequency -->
+                        <label>Train-name</label>
                         <input type="text" class="form-control" id="train-name" placeholder="Train Name">
                     </div>
                     <div class="form-row">
-                        <!-- Train Name, Destination, First Time Train(military time), frequency -->
+                        <label>Destination</label>
                         <input type="text" class="form-control" id="train-destination" placeholder="Destination">
                     </div>
                     <div class="form-row">
-                            <!-- Train Name, Destination, First Time Train(military time), frequency -->
-                        <input type="text" class="form-control" id="train-time" placeholder="First Time Train (HH:MM - Military Time)">
+                        <label>First Train Time</label>
+                        <input type="text" class="form-control" id="train-time" placeholder="First Train Time (HH:MM - Military Time)">
                     </div>
                     <div class="form-row">
-                            <!-- Train Name, Destination, First Time Train(military time), frequency -->
+                        <label>Frequency</label>
                         <input type="text" class="form-control" id="train-frequency" placeholder="Frequency (Min)">
                     </div>
                     <button type="submit" class="btn btn-primary" id="submit">Sign in</button>   
