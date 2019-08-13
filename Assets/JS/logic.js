@@ -19,9 +19,16 @@ $(document).ready(function() {
 
         const trainName = $("train-name").val().trim(); 
         const trainDestination = $("#train-destination").val().trim();
-        const firstTrain = moment($("#train-time").val().trim(), "HH:mm").format("X");
+        const trainTime = moment($("#train-time").val().trim(), "HH:mm").format("X");
         const trainFrequency = $("#train-frequency").val().trim();
 
+        let addedTrain = { 
+            name: trainName, 
+            destination: trainDestination, 
+            time: trainTime, 
+            frequency: trainFrequency
+        }; 
 
+        database.ref().push(addedTrain); 
     })
 })
