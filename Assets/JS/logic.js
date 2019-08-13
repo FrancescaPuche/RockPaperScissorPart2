@@ -36,6 +36,31 @@ $(document).ready(function() {
         console.log(addedTrain.destination); 
         console.log(addedTrain.time); 
         console.log(addedTrain.frequency); 
-    })
-    
+        
+        // clears input fields
+        $("#train-name").val(""); 
+        $("#train-destination").val(""); 
+        $("#train-time").val(""); 
+        $("#train-frequency").val(""); 
+    });
+
+    database.ref().on("rowAdded", function(input) { 
+        console.log(input.val()); 
+
+        const name = input.val().name; 
+        console.log(name);
+        const dest = input.val().name;
+        console.log(dest);
+        const first = input.val().name;
+        console.log(first);
+        const freq = input.val().name;
+        console.log(freq);
+
+        
+
+
+    }
+
+
+
 })
