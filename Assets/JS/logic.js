@@ -81,6 +81,17 @@ $(document).ready(function() {
         console.log(moment(nextTrain).format("HH:mm")); 
 
         // Adding new rows 
+        const newTrain = $("<tr>").append( 
+            $("<th scope='row'>"),
+            $("<td>").text(name), 
+            $("<td>").text(dest),
+            $("<td>").text(freq),
+            $("<td>").text(nextTrain),
+            $("<td>").text(next)
+        );
+
+        $("#schedule-body > tbody").append(newTrain); 
+
         
     });
 
