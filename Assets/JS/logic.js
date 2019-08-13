@@ -6,6 +6,7 @@ $(document).ready(function() {
         apiKey: "AIzaSyDoEg6tWteXY0G0wfUSqavYsMxpgnrrvdo",
         authDomain: "train-scheduler-homework1.firebaseio.com", 
         databaseURL: "https://train-scheduler-homework1.firebaseio.com", 
+        projectId: "train-scheduler-homework1",
         storageBucket: "train-scheduler-homework1.appspot.com"
     }; 
 
@@ -90,9 +91,9 @@ $(document).ready(function() {
             $("<td>").text(next)
         );
 
-        $("#schedule-body > tbody").append(newTrain); 
+        $("#schedule-body").append(newTrain); 
 
-        
+
     });
 
 
