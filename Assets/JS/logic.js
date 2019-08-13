@@ -4,9 +4,9 @@ $(document).ready(function() {
 
     const config = { 
         apiKey: "AIzaSyDoEg6tWteXY0G0wfUSqavYsMxpgnrrvdo",
-        authDomain: "train-schedule-homework1.firebaseio.com", 
-        databaseURL: "https://train-schedule-homework1.firebaseio.com", 
-        storageBucket: "train-schedule-homework1.appspot.com"
+        authDomain: "train-scheduler-homework1.firebaseio.com", 
+        databaseURL: "https://train-scheduler-homework1.firebaseio.com", 
+        storageBucket: "train-scheduler-homework1.appspot.com"
     }; 
 
     firebase.initializeApp(config); 
@@ -16,8 +16,9 @@ $(document).ready(function() {
     // Adding rows to train table
     $("#submit").on("click", function(event) { 
         event.preventDefault(); 
+        console.log("testing"); 
 
-        const trainName = $("train-name").val().trim(); 
+        const trainName = $("#train-name").val().trim(); 
         const trainDestination = $("#train-destination").val().trim();
         const trainTime = moment($("#train-time").val().trim(), "HH:mm").format("X");
         const trainFrequency = $("#train-frequency").val().trim();
@@ -37,23 +38,23 @@ $(document).ready(function() {
         console.log(addedTrain.time); 
         console.log(addedTrain.frequency); 
         
-        // clears input fields
-        $("#train-name").val(""); 
-        $("#train-destination").val(""); 
-        $("#train-time").val(""); 
-        $("#train-frequency").val(""); 
+        // clears childSnapshot fields
+        $("#train-name").val(" "); 
+        $("#train-destination").val(" "); 
+        $("#train-time").val(" "); 
+        $("#train-frequency").val(" "); 
     });
 
-    database.ref().on("rowAdded", function(input) { 
-        console.log(input.val()); 
+    database.ref().on("child_added", function(childSnapshot) { 
+        console.log(childSnapshot.val()); 
 
-        const name = input.val().name; 
+        const name = childSnapshot.val().name; 
         console.log(name);
-        const dest = input.val().name;
+        const dest = childSnapshot.val().name;
         console.log(dest);
-        const first = input.val().name;
+        const first = childSnapshot.val().name;
         console.log(first);
-        const freq = input.val().name;
+        const freq = childSnapshot.val().name;
         console.log(freq);
 
         // Calculating train times 
@@ -72,14 +73,16 @@ $(document).ready(function() {
         const timeRemaining = differentTime % freq;
         console.log(timeRemaining); 
 
-        const nextTrain = freq - timeRemaining; 
-        console.log(nextTrain); 
+        const next = freq - timeRemaining; 
+        console.log(next); 
 
+        // Calculations for next train 
+        const nextTrain = moment().add(next, "minutes").format("HH:mm"); 
+        console.log(moment(nextTrain).format("HH:mm")); 
 
-
-
-
-    }
+        // Adding new rows 
+        
+    });
 
 
 
