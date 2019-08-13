@@ -3,9 +3,9 @@ $(document).ready(function() {
     //Clock display function 
 
     const config = { 
-        apiKey: "AIzaSyDoEg6tWteXY0G0wfUSqavYsMxpgnrrvdo"; 
+        apiKey: "AIzaSyDoEg6tWteXY0G0wfUSqavYsMxpgnrrvdo",
         authDomain: "train-schedule-homework1.firebaseio.com", 
-        projectId: "train-schedule-homework1", 
+        databaseURL: "https://train-schedule-homework1.firebaseio.com", 
         storageBucket: "train-schedule-homework1.appspot.com"
     }; 
 
@@ -30,5 +30,12 @@ $(document).ready(function() {
         }; 
 
         database.ref().push(addedTrain); 
+
+        // testing 
+        console.log(addedTrain.name);
+        console.log(addedTrain.destination); 
+        console.log(addedTrain.time); 
+        console.log(addedTrain.frequency); 
     })
+    
 })
