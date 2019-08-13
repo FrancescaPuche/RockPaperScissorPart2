@@ -23,32 +23,41 @@
             <h5 class="text-center card-header"> Train Schedule </h5>
             <table class="table">
                 <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                    <tr class="text-center">
+                        <th scope="col"></th>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (Min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
+                <tbody class="text-center" id="schedule-body">
+                    <!-- <tr>
+                        <th scope="row"></th>
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
                     </tr>
                     <tr>
-                        <th scope="row">2</th>
+                        <th scope="row"></th>
                         <td>Jacob</td>
                         <td>Thornton</td>
                         <td>@fat</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
                     </tr>
                     <tr>
-                        <th scope="row">3</th>
+                        <th scope="row"></th>
                         <td>Larry</td>
                         <td>the Bird</td>
                         <td>@twitter</td>
-                    </tr>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr> -->
+                    
                 </tbody>
             </table>
         </div> 
@@ -59,21 +68,21 @@
                 <form class="container">
                     <div class="form-row">
                         <!-- Train Name, Destination, First Time Train(military time), frequency -->
-                        <input type="text" class="form-control" placeholder="Train Name">
+                        <input type="text" class="form-control" id="train-name" placeholder="Train Name">
                     </div>
                     <div class="form-row">
                         <!-- Train Name, Destination, First Time Train(military time), frequency -->
-                        <input type="text" class="form-control" placeholder="Destination">
+                        <input type="text" class="form-control" id="train-destination" placeholder="Destination">
                     </div>
                     <div class="form-row">
                             <!-- Train Name, Destination, First Time Train(military time), frequency -->
-                        <input type="text" class="form-control" placeholder="First Time Train (HH:MM - Military Time)">
+                        <input type="text" class="form-control" id="train-time" placeholder="First Time Train (HH:MM - Military Time)">
                     </div>
                     <div class="form-row">
                             <!-- Train Name, Destination, First Time Train(military time), frequency -->
-                        <input type="text" class="form-control" placeholder="Frequency (Min)">
+                        <input type="text" class="form-control" id="train-frequency" placeholder="Frequency (Min)">
                     </div>
-                    <button type="submit" class="btn btn-primary">Sign in</button>   
+                    <button type="submit" class="btn btn-primary" id="submit">Sign in</button>   
                 </form> 
             </div>
         </div>
